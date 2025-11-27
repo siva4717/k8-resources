@@ -6,4 +6,5 @@ metadata:
  
  lables:
   environment: development
-  project: roboshop
+  project: roboshop-dev
+
