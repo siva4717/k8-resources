@@ -6,7 +6,7 @@ spec:
   containers: 
   - name: nginx
     image: nginx 
-    resources:
+    resource:
       # Soft limit
       requests:
         memory: "68Mi"
