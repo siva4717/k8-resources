@@ -15,4 +15,4 @@ spec:
       # you can give equal or greater than requests
       limits:
         memory: "100Mi"
-        cpy: "120m"
+        cpu: "120m"
