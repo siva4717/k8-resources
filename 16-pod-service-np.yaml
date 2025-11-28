@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: service-np-demo
+  # these labels are used to register this pod with nodeport service
+  labels: 
+    project: roboshop
+    environment: dev 
+    component: frontend
+    purpose: node-port
+spec:
+  containers:
+  - name: nginx
+    image: nginx
