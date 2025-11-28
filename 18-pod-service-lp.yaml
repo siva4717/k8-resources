@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: service-lb-demo
+  # these labels are used this pod with load balancer service
+  labels: 
+    project: roboshop
+    environment: dev 
+    component: frontend
+    purpose: load-balancer
+spec: 
+  containers:
+  - name: nginx
+    image: nginx
