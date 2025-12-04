@@ -13,7 +13,7 @@ spec:
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle: vol-03c604538dd7d2f41
+    volumeHandle: vol-0aab56e7ca6b52899
   
 ---
 # create PVC
@@ -36,6 +36,8 @@ apiVersion: v1
 kind: Pod 
 metadata:
   name: nginx
+  labels:
+    purpose: ebs-static
 spec:
   containers:
   - name: nginx
@@ -49,3 +51,18 @@ spec:
   - name: nginx-html
     persistentVolumeClaim: 
       claimName: ebs-static
+---
+# create service loadbalancer
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx-ebs-static
+type: LoadBalancer
+spec:
+  selector:
+    purpose: ebs-static
+  ports: 
+  - protocal: TCP
+    port: 80
+    targetPort: 80
+    nodeport: 30007
