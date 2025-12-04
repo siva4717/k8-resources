@@ -8,14 +8,14 @@ spec:
   - name: nginx
     image: nginx
     volumeMounts:
-    - mountPath: var/logs/nginx
-      name: nginx-logs
+    - name: nginx-logs
+      mountPath: var/logs/nginx
   - name: almalinux
     image: almalinux:9
     command: ["sleep","1000"]
     volumeMounts:
-    - mountPath: mnt/nginx-logs
-      name: nginx-logs
+    - name: nginx-logs
+      mountPath: mnt/nginx/logs
       readOnly: true
   volumes:
   - name: nginx-logs
