@@ -63,7 +63,7 @@ spec:
   selector:
     purpose: ebs-static
   ports: 
-  - protocal: TCP
+  - protocol: TCP
     port: 80
     targetPort: 80
     nodeport: 30007
