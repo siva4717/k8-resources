@@ -5,3 +5,4 @@ metadata:
 reclaimPolicy: Retain # default value is Delete
 provisioner: ebs.csi.aws.com
 volumeBindingMode: WaitForFirstConsumer
+
